@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmoquabfl7nly"]
+
+[ext_resource type="Script" path="res://assets/docks/dock_boat.gd" id="1_qbkrc"]
+[ext_resource type="PackedScene" uid="uid://uok5pcpbkto7" path="res://Models/Props/cruise_ship_small.tscn" id="1_w8vo7"]
+[ext_resource type="PackedScene" uid="uid://cdc0k23cmpyvo" path="res://Models/Props/container_ship.tscn" id="2_4jclb"]
+[ext_resource type="PackedScene" uid="uid://b7vh73lue0ohh" path="res://Models/Props/ferry_ship.tscn" id="4_1llvo"]
+[ext_resource type="PackedScene" uid="uid://dhfidke7sqq04" path="res://Models/Props/fish_ship.tscn" id="5_y3uvw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wj1it"]
+size = Vector3(1.76758, 1, 1)
+
+[node name="Dock Boat 1" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5229, 0, 5.36694)
+script = ExtResource("1_qbkrc")
+
+[node name="Holder" type="Node3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -7.64274e-15, -8.74228e-08, 1, 8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0)
+
+[node name="Cruise Ship Small" parent="Holder" instance=ExtResource("1_w8vo7")]
+
+[node name="Container Ship" parent="Holder" instance=ExtResource("2_4jclb")]
+
+[node name="Ferry Boat" parent="Holder" instance=ExtResource("4_1llvo")]
+
+[node name="Fishing Boat" parent="Holder" instance=ExtResource("5_y3uvw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.334568)
+shape = SubResource("BoxShape3D_wj1it")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

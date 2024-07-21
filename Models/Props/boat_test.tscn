@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://p33l1cfya3pc"]
+
+[ext_resource type="PackedScene" uid="uid://cdc0k23cmpyvo" path="res://Models/Props/container_ship.tscn" id="1_kx103"]
+[ext_resource type="PackedScene" uid="uid://uok5pcpbkto7" path="res://Models/Props/cruise_ship_small.tscn" id="2_xqsax"]
+[ext_resource type="PackedScene" uid="uid://b7vh73lue0ohh" path="res://Models/Props/ferry_ship.tscn" id="3_30x27"]
+[ext_resource type="PackedScene" uid="uid://dhfidke7sqq04" path="res://Models/Props/fish_ship.tscn" id="4_dr3lc"]
+[ext_resource type="PackedScene" uid="uid://bouexxouyct01" path="res://Models/Props/pirate_ship.tscn" id="5_xtarl"]
+
+[node name="Boat Test" type="Node3D"]
+
+[node name="Container Ship" parent="." instance=ExtResource("1_kx103")]
+transform = Transform3D(2.86603e-16, 6.55671e-09, 0.15, 0.15, -6.55671e-09, -5.36013e-22, 6.55671e-09, 0.15, -6.55671e-09, 0, 0, 1.04933)
+
+[node name="Cruise Ship Small" parent="." instance=ExtResource("2_xqsax")]
+
+[node name="Ferry Boat" parent="." instance=ExtResource("3_30x27")]
+transform = Transform3D(3.43924e-16, 7.86805e-09, 0.18, 0.18, -7.86805e-09, -6.71243e-22, 7.86805e-09, 0.18, -7.86805e-09, 0, 0, -0.829281)
+
+[node name="Fishing Boat" parent="." instance=ExtResource("4_dr3lc")]
+transform = Transform3D(4.58565e-16, 1.04907e-08, 0.24, 0.24, -1.04907e-08, -8.57621e-22, 1.04907e-08, 0.24, -1.04907e-08, 0, 0, -2.16797)
+
+[node name="Pirate Ship" parent="." instance=ExtResource("5_xtarl")]
+transform = Transform3D(3.0571e-16, 6.99382e-09, 0.16, 0.16, -6.99382e-09, -5.34147e-22, 6.99382e-09, 0.16, -6.99382e-09, 0, 0, 1.87508)

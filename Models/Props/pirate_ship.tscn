@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bouexxouyct01"]
+
+[ext_resource type="PackedScene" uid="uid://dptgq0ubmvhn" path="res://Models/Pirates/ship_dark.gltf" id="1_y5spk"]
+[ext_resource type="Script" path="res://Models/Props/RandomOffset.gd" id="2_qj2mq"]
+
+[sub_resource type="Animation" id="Animation_f3mwt"]
+resource_name = "rocking"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_dark_8angles:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-7.63703e-10, -8.13523e-09, -0.187204), Vector3(0, -4.23516e-22, 0), Vector3(-2.68713e-10, 7.28652e-09, 0.166981)]
+}
+
+[sub_resource type="Animation" id="Animation_jknk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_dark_8angles:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -4.23516e-22, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qr3hg"]
+_data = {
+"RESET": SubResource("Animation_jknk7"),
+"rocking": SubResource("Animation_f3mwt")
+}
+
+[node name="Pirate Ship" instance=ExtResource("1_y5spk")]
+transform = Transform3D(3.0571e-16, 6.99382e-09, 0.16, 0.16, -6.99382e-09, 0, 6.99382e-09, 0.16, -6.99382e-09, 0, 0, 0)
+
+[node name="ship_dark_8angles" parent="." index="0"]
+transform = Transform3D(1, 0, -4.23516e-22, 0, 1, 0, 4.23516e-22, 0, 1, 1.50789e-15, 3.44966e-08, 0.78919)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_qr3hg")
+}
+autoplay = "rocking"
+script = ExtResource("2_qj2mq")

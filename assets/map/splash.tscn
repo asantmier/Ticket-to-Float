@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceu4m1117avok"]
+
+[ext_resource type="AudioStream" uid="uid://bs8tqyno3trus" path="res://sound/wave_03.wav" id="1_oxxod"]
+[ext_resource type="Script" path="res://assets/map/splash.gd" id="2_ihu0w"]
+
+[node name="Splash" type="AudioStreamPlayer"]
+stream = ExtResource("1_oxxod")
+autoplay = true
+script = ExtResource("2_ihu0w")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

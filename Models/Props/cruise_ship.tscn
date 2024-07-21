@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck7e8rc3fe8xv"]
+
+[ext_resource type="PackedScene" uid="uid://e3jsacnowxp4" path="res://Models/Watercraft/ship-ocean-liner.glb" id="1_i4stl"]
+
+[sub_resource type="Animation" id="Animation_x77qn"]
+resource_name = "rocking"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship-ocean-liner:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.78106e-10, -6.44737e-09, -0.148039), Vector3(0, 0, 0), Vector3(-4.29009e-10, 6.10914e-09, 0.14022)]
+}
+
+[sub_resource type="Animation" id="Animation_dtm5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship-ocean-liner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1px0y"]
+_data = {
+"RESET": SubResource("Animation_dtm5b"),
+"rocking": SubResource("Animation_x77qn")
+}
+
+[node name="Cruise Ship" instance=ExtResource("1_i4stl")]
+transform = Transform3D(1.91069e-16, 4.37114e-09, 0.1, 0.1, -4.37114e-09, -3.57342e-22, 4.37114e-09, 0.1, -4.37114e-09, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_1px0y")
+}
+autoplay = "rocking"

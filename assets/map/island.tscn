@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx7svbbk8hbvs"]
+
+[ext_resource type="Script" path="res://assets/map/island.gd" id="1_okxtp"]
+[ext_resource type="PackedScene" uid="uid://c0s6b4rw5pdkx" path="res://Models/Survival/rock-flat-grass.glb" id="1_v5b6i"]
+
+[node name="Island" type="Node3D"]
+script = ExtResource("1_okxtp")
+
+[node name="rock-flat-grass2" parent="." instance=ExtResource("1_v5b6i")]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0112305, 1.11713)
+no_depth_test = true
+text = "Name"
+font_size = 128

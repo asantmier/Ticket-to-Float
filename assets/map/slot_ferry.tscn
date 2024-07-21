@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2eg4hjwimisw"]
+
+[ext_resource type="Texture2D" uid="uid://b13bvnq144vtx" path="res://2D/Puzzle/element_grey_rectangle.png" id="1_mgnmn"]
+[ext_resource type="Script" path="res://assets/map/slot.gd" id="2_2csw1"]
+[ext_resource type="PackedScene" uid="uid://b7vh73lue0ohh" path="res://Models/Props/ferry_ship.tscn" id="3_d20ym"]
+[ext_resource type="PackedScene" uid="uid://bouexxouyct01" path="res://Models/Props/pirate_ship.tscn" id="4_eb5gn"]
+
+[node name="Slot Ferry" type="Node3D"]
+script = ExtResource("2_2csw1")
+
+[node name="Slot Ferry" type="Sprite3D" parent="."]
+transform = Transform3D(1.3, 0, 0, 0, -5.68248e-08, 1.3, 0, -1.3, -5.68248e-08, 0, 0, 0)
+modulate = Color(0.313726, 0.352941, 0.721569, 1)
+texture = ExtResource("1_mgnmn")
+
+[node name="Ship" parent="." instance=ExtResource("3_d20ym")]
+transform = Transform3D(3.43923e-16, 7.86805e-09, 0.18, 0, 0.18, -7.86805e-09, -0.18, 0, 3.43923e-16, 0, 0, 0)
+
+[node name="Pirate Ship" parent="." instance=ExtResource("4_eb5gn")]
+transform = Transform3D(3.0571e-16, 6.99382e-09, 0.16, 0, 0.16, -6.99382e-09, -0.16, 0, 3.0571e-16, 0, 0, 0)
